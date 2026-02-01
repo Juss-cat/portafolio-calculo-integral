@@ -1,0 +1,10 @@
+[
+  {
+    "key": "FLASK_ENV",
+    "value": "production"
+  },
+  {
+    "key": "PYTHON_VERSION",
+    "value": "3.11.0"
+  }
+]

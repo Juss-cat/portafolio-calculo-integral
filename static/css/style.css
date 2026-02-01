@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de colores pasteles */
+:root {
+    --rosa-pastel: #FFB6D9;
+    --rosa-claro: #FFC9E3;
+    --crema: #FFF9E6;
+    --verde-pastel: #B8E6D5;
+    --azul-pastel: #B3D9FF;
+    --morado-pastel: #D9B3FF;
+    --naranja-pastel: #FFD9B3;
+    --blanco: #FFFFFF;
+    --gris-claro: #F5F5F5;
+    --texto-oscuro: #4A4A4A;
+}
+
+/* Tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Comfortaa:wght@400;700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, var(--crema) 0%, var(--rosa-claro) 100%);
+    color: var(--texto-oscuro);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Comfortaa', cursive;
+    color: var(--rosa-pastel);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(255, 182, 217, 0.3);
+}
+
+h2 {
+    font-size: 2em;
+    margin: 1.5em 0 0.5em 0;
+    color: var(--rosa-pastel);
+}
+
+h3 {
+    font-size: 1.4em;
+    margin: 1em 0 0.5em 0;
+    color: var(--verde-pastel);
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--rosa-claro) 100%);
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(255, 182, 217, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "⭐ 💕 ✨ 🌟 💕 ✨ ⭐";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    font-size: 1.2em;
+    opacity: 0.5;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navegación */
+nav {
+    background: var(--crema);
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    padding: 0.8em 1.5em;
+    background: linear-gradient(135deg, var(--verde-pastel) 0%, var(--azul-pastel) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Comfortaa', cursive;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--azul-pastel) 0%, var(--morado-pastel) 100%);
+}
+
+nav a.active {
+    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--naranja-pastel) 100%);
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+/* Tarjetas de temas */
+.temas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.tema-card {
+    background: var(--blanco);
+    border-radius: 20px;
+    padding: 2em;
+    box-shadow: 0 4px 15px rgba(255, 182, 217, 0.2);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.tema-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 182, 217, 0.1) 0%, transparent 70%);
+    transition: all 0.3s ease;
+}
+
+.tema-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(255, 182, 217, 0.3);
+    border-color: var(--rosa-pastel);
+}
+
+.tema-card:hover::before {
+    top: -20%;
+    right: -20%;
+}
+
+.tema-card h3 {
+    margin-bottom: 0.5em;
+    position: relative;
+    z-index: 1;
+}
+
+.tema-card p {
+    color: var(--texto-oscuro);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1em;
+}
+
+.tema-card a {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--naranja-pastel) 100%);
+    color: white;
+    padding: 0.6em 1.2em;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.tema-card a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 182, 217, 0.3);
+}
+
+/* Contenido de tema */
+.tema-contenido {
+    background: var(--blanco);
+    border-radius: 20px;
+    padding: 3em;
+    box-shadow: 0 4px 15px rgba(255, 182, 217, 0.2);
+    margin-bottom: 2em;
+}
+
+.tema-header {
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 3px dotted var(--rosa-pastel);
+}
+
+.tema-header h1 {
+    color: var(--rosa-pastel);
+    margin-bottom: 0.5em;
+}
+
+.tema-header p {
+    font-size: 1.2em;
+    color: var(--verde-pastel);
+}
+
+/* Secciones */
+.seccion {
+    margin: 2em 0;
+    padding: 2em;
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.05) 0%, rgba(184, 230, 213, 0.05) 100%);
+    border-radius: 15px;
+    border-left: 5px solid var(--rosa-pastel);
+}
+
+.seccion h3 {
+    margin-top: 0;
+}
+
+/* Fórmulas */
+.formula {
+    background: var(--azul-pastel);
+    padding: 1.5em;
+    border-radius: 10px;
+    margin: 1em 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(179, 217, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Listas */
+ul, ol {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.8em;
+    line-height: 1.8;
+}
+
+/* Ejemplos */
+.ejemplo {
+    background: linear-gradient(135deg, var(--verde-pastel) 0%, var(--azul-pastel) 100%);
+    padding: 1.5em;
+    border-radius: 15px;
+    margin: 1.5em 0;
+    border-left: 5px solid var(--verde-pastel);
+    color: white;
+}
+
+.ejemplo h4 {
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+.ejemplo p {
+    line-height: 1.8;
+}
+
+/* Ejercicios */
+.ejercicio {
+    background: linear-gradient(135deg, var(--naranja-pastel) 0%, var(--rosa-claro) 100%);
+    padding: 1.5em;
+    border-radius: 15px;
+    margin: 1.5em 0;
+    border: 2px dashed var(--rosa-pastel);
+}
+
+.ejercicio h4 {
+    font-family: 'Comfortaa', cursive;
+    color: var(--rosa-pastel);
+    margin-bottom: 0.5em;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--naranja-pastel) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1em;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 182, 217, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--verde-pastel) 0%, var(--azul-pastel) 100%);
+}
+
+/* Footer */
+footer {
+    background: var(--rosa-pastel);
+    color: white;
+    text-align: center;
+    padding: 2em;
+    margin-top: 3em;
+    box-shadow: 0 -4px 6px rgba(255, 182, 217, 0.2);
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--naranja-pastel) 100%);
+    color: white;
+    padding: 1em;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 1em;
+    border-bottom: 2px solid var(--crema);
+}
+
+tr:hover {
+    background: var(--crema);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    header {
+        padding: 1em;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .temas-grid {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .tema-contenido {
+        padding: 1.5em;
+    }
+
+    .seccion {
+        padding: 1em;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tema-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.tema-contenido {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Decoraciones adicionales */
+.stars {
+    position: relative;
+}
+
+.stars::before {
+    content: "✨";
+    margin-right: 0.5em;
+}
+
+.stars::after {
+    content: "✨";
+    margin-left: 0.5em;
+}
+
+.heart {
+    color: var(--rosa-pastel);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Clases para reemplazar inline styles en index.html */
+.bienvenida h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--rosa-pastel);
+    margin: 1em 0;
+}
+
+.bienvenida p {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--texto-oscuro);
+    max-width: 800px;
+    margin: 0 auto 2em;
+}
+
+.categorias {
+    text-align: center;
+    margin: 3em 0;
+}
+
+.categorias h2 {
+    margin-bottom: 2em;
+}
+
+.temas-grid {
+    max-width: 900px;
+    margin: 0 auto 3em;
+}
+
+.temas-grid a {
+    text-decoration: none;
+}
+
+.temas-grid .tema-card {
+    cursor: pointer;
+}
+
+.temas-grid h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.caracteristicas {
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.1) 0%, rgba(184, 230, 213, 0.1) 100%);
+    padding: 3em;
+    border-radius: 20px;
+    margin: 3em 0;
+}
+
+.caracteristicas h2 {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+}
+
+.caracteristica {
+    text-align: center;
+}
+
+.caracteristica div {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.caracteristica h3 {
+    font-size: 1.3em;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--naranja-pastel) 100%);
+    padding: 3em;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    margin: 3em 0;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 1em;
+}
+
+.cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+}
+
+.cta-section .btn {
+    background: white;
+    color: var(--rosa-pastel);
+}

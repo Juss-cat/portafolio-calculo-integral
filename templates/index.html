@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="index-container">
+    <section class="bienvenida">
+        <h2>¡Bienvenido! 📚</h2>
+        <p>Aquí encontrarás una guía completa de cálculo integral con explicaciones detalladas, ejemplos resueltos paso a paso y ejercicios prácticos de múltiple opción para que puedas evaluar tu aprendizaje.</p>
+    </section>
+
+    <section class="categorias">
+        <h2>Categorías Principales</h2>
+        <div class="temas-grid">
+            <a href="/tema/conceptos-basicos">
+                <div class="tema-card">
+                    <h3>Conceptos Básicos</h3>
+                    <p>Fundamentos esenciales para entender el cálculo integral</p>
+                </div>
+            </a>
+
+            <a href="/tema/suma-riemann">
+                <div class="tema-card">
+                    <h3>Suma de Riemann</h3>
+                    <p>Aproxima áreas bajo curvas utilizando rectángulos</p>
+                </div>
+            </a>
+
+            <a href="/tema/integrales-indefinidas">
+                <div class="tema-card">
+                    <h3>Integrales Indefinidas</h3>
+                    <p>Aprende sobre antiderivadas y sus propiedades principales</p>
+                </div>
+            </a>
+
+            <a href="/tema/integrales-definidas">
+                <div class="tema-card">
+                    <h3>Integrales Definidas</h3>
+                    <p>Calcula áreas exactas bajo curvas entre dos puntos</p>
+                </div>
+            </a>
+
+            <a href="/tema/por-partes">
+                <div class="tema-card">
+                    <h3>Integración por Partes</h3>
+                    <p>Técnica fundamental para resolver integrales de productos</p>
+                </div>
+            </a>
+
+            <a href="/tema/sustitucion">
+                <div class="tema-card">
+                    <h3>Integración por Sustitución</h3>
+                    <p>Simplifica integrales complejas mediante cambio de variable</p>
+                </div>
+            </a>
+
+            <a href="/tema/area-bajo-curva">
+                <div class="tema-card">
+                    <h3>Área bajo la Curva</h3>
+                    <p>Aplicaciones prácticas de integrales definidas en geometría</p>
+                </div>
+            </a>
+
+            <a href="/tema/volumen-solido">
+                <div class="tema-card">
+                    <h3>Volumen de Sólido de Revolución</h3>
+                    <p>Calcula volúmenes cuando giras una región alrededor de un eje</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="caracteristicas">
+        <h2>✨ Lo que encontrarás en cada tema:</h2>
+        <div class="caracteristicas-grid">
+            <div class="caracteristica">
+                <div>📚</div>
+                <h3>Explicaciones Claras</h3>
+                <p>Cada concepto explicado de forma simple y directa</p>
+            </div>
+            <div class="caracteristica">
+                <div>💡</div>
+                <h3>Ejemplos Prácticos</h3>
+                <p>Ejemplos paso a paso para cada tema</p>
+            </div>
+            <div class="caracteristica">
+                <div>🎓</div>
+                <h3>Ejercicios</h3>
+                <p>Practica lo aprendido con ejercicios variados</p>
+            </div>
+            <div class="caracteristica">
+                <div>📐</div>
+                <h3>Fórmulas Clave</h3>
+                <p>Todas las fórmulas importantes en un lugar</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>🚀 ¿Listo para comenzar?</h2>
+        <p>Elige un tema y comienza tu viaje en el mundo del cálculo integral</p>
+        <a href="/tema/conceptos-basicos" class="btn">
+            Comenzar ahora
+        </a>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tema.titulo }} - Cálculo Integral{% endblock %}
+
+{% block content %}
+<div class="tema-contenido">
+    <div class="tema-header">
+        <h1>{{ tema.titulo }}</h1>
+        <p>{{ tema.descripcion }}</p>
+    </div>
+
+    {% if tema.contenido.introduccion %}
+    <div class="seccion">
+        <h3>Introducción</h3>
+        <p>{{ tema.contenido.introduccion }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Temas para Conceptos Básicos -->
+    {% if tema.contenido.temas %}
+    {% for item in tema.contenido.temas %}
+    <div class="seccion">
+        <h3>{{ item.nombre }}</h3>
+        <p>{{ item.explicacion }}</p>
+        {% if item.formula %}
+        <div class="formula">
+            {{ item.formula }}
+        </div>
+        {% endif %}
+        {% if item.ejemplo %}
+        <div class="ejemplo">
+            <h4>💡 Ejemplo:</h4>
+            <p>{{ item.ejemplo }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Pasos para Suma de Riemann -->
+    {% if tema.contenido.pasos %}
+    <div class="seccion">
+        <h3>Pasos a Seguir</h3>
+        <ol>
+            {% for paso in tema.contenido.pasos %}
+            <li>{{ paso }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% endif %}
+
+    <!-- Fórmula principal -->
+    {% if tema.contenido.formula %}
+    <div class="seccion">
+        <h3>Fórmula Principal</h3>
+        <div class="formula">
+            {{ tema.contenido.formula }}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Propiedades -->
+    {% if tema.contenido.propiedades %}
+    <div class="seccion">
+        <h3>Propiedades Importantes</h3>
+        <ul>
+            {% for prop in tema.contenido.propiedades %}
+            <li>
+                <strong>{{ prop }}</strong>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Reglas Básicas -->
+    {% if tema.contenido.reglas_basicas %}
+    <div class="seccion">
+        <h3>Reglas Básicas</h3>
+        {% for regla in tema.contenido.reglas_basicas %}
+        <div style="margin: 1.5em 0; padding: 1em; background: var(--crema); border-radius: 10px;">
+            <h4>{{ regla.descripcion }}</h4>
+            <div class="formula">
+                {{ regla.formula }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Teorema -->
+    {% if tema.contenido.teorema %}
+    <div class="seccion">
+        <h3>Teorema Fundamental</h3>
+        <div class="formula">
+            {{ tema.contenido.teorema }}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Casos Especiales -->
+    {% if tema.contenido.casos_especiales %}
+    <div class="seccion">
+        <h3>Casos Especiales</h3>
+        <ul>
+            {% for caso in tema.contenido.casos_especiales %}
+            <li>{{ caso }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Métodos -->
+    {% if tema.contenido.metodos %}
+    <div class="seccion">
+        <h3>Métodos de Cálculo</h3>
+        <ol>
+            {% for metodo in tema.contenido.metodos %}
+            <li>{{ metodo }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% endif %}
+
+    <!-- Fórmula del Disco -->
+    {% if tema.contenido.formula_disco %}
+    <div class="seccion">
+        <h3>Método de Discos</h3>
+        <div class="formula">
+            {{ tema.contenido.formula_disco }}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Fórmula del Cilindro -->
+    {% if tema.contenido.formula_cilindro %}
+    <div class="seccion">
+        <h3>Método de Capas Cilíndricas</h3>
+        <div class="formula">
+            {{ tema.contenido.formula_cilindro }}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Ejemplo en tema -->
+    {% if tema.contenido.ejemplo %}
+    <div class="ejemplo">
+        <h4>💡 Ejemplo Completo:</h4>
+        <p><strong>Problema:</strong> {{ tema.contenido.ejemplo.problema }}</p>
+        <p><strong>Solución:</strong> {{ tema.contenido.ejemplo.solucion }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Ejercicios -->
+    <div class="seccion">
+        <h3>Ejercicios Propuestos</h3>
+        
+        {% if tema.ejercicios %}
+        <div class="quiz-container" id="quiz-{{ tema_id }}"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const ejercicios{{ tema_id | replace('-', '_') }} = {{ tema.ejercicios | tojson }};
+                console.log('Ejercicios cargados:', ejercicios{{ tema_id | replace('-', '_') }});
+                if (typeof Quiz !== 'undefined') {
+                    const quiz{{ tema_id | replace('-', '_') }} = new Quiz('quiz-{{ tema_id }}', ejercicios{{ tema_id | replace('-', '_') }});
+                } else {
+                    console.error('Quiz class no está definida');
+                }
+            });
+        </script>
+        {% else %}
+        <p style="background: #ffe6e6; padding: 1em; border-radius: 10px; color: #c00;">
+            ⚠️ No hay ejercicios disponibles para este tema aún.
+        </p>
+        {% endif %}
+    </div>
+
+    <!-- Botones de navegación -->
+    <div style="text-align: center; margin-top: 3em; padding-top: 2em; border-top: 2px dashed var(--rosa-pastel);">
+        <a href="/" class="btn btn-secondary">← Volver al inicio</a>
+        <a href="/#temas" class="btn" style="margin-left: 1em;">Ver todos los temas →</a>
+    </div>
+</div>
+{% endblock %}

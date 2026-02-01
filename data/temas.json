@@ -1,0 +1,285 @@
+{
+  "conceptos-basicos": {
+    "titulo": "Conceptos Básicos",
+    "descripcion": "Fundamentos esenciales del cálculo integral",
+    "contenido": {
+      "introduccion": "El cálculo integral es una rama de las matemáticas que se encarga del estudio de las integrales y sus aplicaciones.",
+      "temas": [
+        {
+          "nombre": "¿Qué es una Integral?",
+          "explicacion": "Una integral es la operación inversa a la derivada. Si la derivada nos da la tasa de cambio, la integral nos permite recuperar la función original.",
+          "formula": "∫f(x)dx = F(x) + C",
+          "ejemplo": "Si f(x) = 2x, entonces ∫2x dx = x² + C"
+        },
+        {
+          "nombre": "La Constante de Integración",
+          "explicacion": "Cuando integramos una función, siempre añadimos una constante C porque infinitas funciones tienen la misma derivada.",
+          "ejemplo": "La derivada de x² + 5 es 2x, la derivada de x² - 3 también es 2x, por eso ∫2x dx = x² + C"
+        }
+      ]
+    },
+    "ejercicios": [
+      {
+        "pregunta": "¿Cuál es la integral de f(x) = 5?",
+        "opciones": ["5x + C", "0 + C", "5x²/2 + C", "5 + C"],
+        "correcta": 0,
+        "explicacion": "La integral de una constante es la constante multiplicada por x."
+      },
+      {
+        "pregunta": "Si F'(x) = 3x², ¿cuál es F(x)?",
+        "opciones": ["6x + C", "x³ + C", "9x + C", "3x² + C"],
+        "correcta": 1,
+        "explicacion": "Buscamos la función cuya derivada es 3x². Esa es x³."
+      },
+      {
+        "pregunta": "¿Cuál es ∫(2x + 3)dx?",
+        "opciones": ["x² + 3x + C", "2 + C", "2x² + 3x + C", "x² + 3 + C"],
+        "correcta": 0,
+        "explicacion": "Integral de 2x es x², integral de 3 es 3x. Suma: x² + 3x + C"
+      }
+    ]
+  },
+  "suma-riemann": {
+    "titulo": "Suma de Riemann",
+    "descripcion": "Aproximación del área bajo una curva",
+    "contenido": {
+      "introduccion": "La suma de Riemann es un método para aproximar el área bajo una curva dividiendo la región en rectángulos.",
+      "pasos": [
+        "Dividir el intervalo en n subintervalos",
+        "Calcular la altura de cada rectángulo",
+        "Sumar las áreas de todos los rectángulos",
+        "Cuando n tiende a infinito, obtenemos el área exacta"
+      ],
+      "formula": "A ≈ Σ f(xᵢ)·Δx"
+    },
+    "ejercicios": [
+      {
+        "pregunta": "¿Cuál es el propósito principal de la suma de Riemann?",
+        "opciones": [
+          "Calcular derivadas de funciones",
+          "Aproximar el área bajo una curva dividiendo en rectángulos",
+          "Encontrar los ceros de una función",
+          "Determinar la pendiente de una recta"
+        ],
+        "correcta": 1,
+        "explicacion": "La suma de Riemann aproxima áreas bajo curvas usando rectángulos."
+      },
+      {
+        "pregunta": "Si dividimos un intervalo [0,2] en 4 subintervalos iguales para f(x) = x, ¿cuál es Δx?",
+        "opciones": ["0.25", "0.5", "1", "2"],
+        "correcta": 1,
+        "explicacion": "Δx = (2-0)/4 = 0.5"
+      }
+    ]
+  },
+  "integrales-indefinidas": {
+    "titulo": "Integrales Indefinidas",
+    "descripcion": "Antiderivadas y propiedades fundamentales",
+    "contenido": {
+      "introduccion": "Una integral indefinida es el conjunto de todas las antiderivadas de una función.",
+      "propiedades": [
+        "∫[f(x) + g(x)]dx = ∫f(x)dx + ∫g(x)dx",
+        "∫k·f(x)dx = k·∫f(x)dx (donde k es constante)",
+        "∫0dx = C"
+      ],
+      "reglas_basicas": [
+        {
+          "formula": "∫xⁿ dx = (xⁿ⁺¹)/(n+1) + C",
+          "descripcion": "Regla de la potencia"
+        },
+        {
+          "formula": "∫eˣ dx = eˣ + C",
+          "descripcion": "Integral de exponencial"
+        },
+        {
+          "formula": "∫(1/x)dx = ln|x| + C",
+          "descripcion": "Integral de 1/x"
+        }
+      ]
+    },
+    "ejercicios": [
+      {
+        "pregunta": "¿Cuál es ∫x³ dx?",
+        "opciones": ["3x² + C", "x⁴/4 + C", "4x⁴ + C", "x⁴ + C"],
+        "correcta": 1,
+        "explicacion": "Usando la regla de la potencia: ∫x³ dx = x⁴/4 + C"
+      },
+      {
+        "pregunta": "¿Cuál es ∫eˣ dx?",
+        "opciones": ["x·eˣ + C", "eˣ + C", "e + C", "1 + C"],
+        "correcta": 1,
+        "explicacion": "La integral de eˣ es eˣ + C"
+      },
+      {
+        "pregunta": "¿Cuál es ∫(3x² + 2x)dx?",
+        "opciones": ["6x + 2 + C", "x³ + x² + C", "3x³/3 + 2x²/2 + C", "x³ + x² + C"],
+        "correcta": 3,
+        "explicacion": "∫3x² dx = x³ + C, ∫2x dx = x² + C. Total: x³ + x² + C"
+      }
+    ]
+  },
+  "integrales-definidas": {
+    "titulo": "Integrales Definidas",
+    "descripcion": "Cálculo de áreas y volúmenes",
+    "contenido": {
+      "introduccion": "Una integral definida calcula el área neta bajo una curva entre dos puntos.",
+      "teorema": "Si F es una antiderivada de f en [a,b], entonces: ∫ₐᵇ f(x)dx = F(b) - F(a)",
+      "propiedades": [
+        "∫ₐᵇ f(x)dx = -∫ᵇₐ f(x)dx",
+        "∫ₐᵃ f(x)dx = 0",
+        "∫ₐᶜ f(x)dx = ∫ₐᵇ f(x)dx + ∫ᵇᶜ f(x)dx"
+      ]
+    },
+    "ejercicios": [
+      {
+        "pregunta": "Evalúa ∫₁³ 2x dx",
+        "opciones": ["6", "8", "10", "12"],
+        "correcta": 1,
+        "explicacion": "∫₁³ 2x dx = [x²]₁³ = 9 - 1 = 8"
+      },
+      {
+        "pregunta": "¿Cuál es ∫₀² 3 dx?",
+        "opciones": ["3", "6", "2", "0"],
+        "correcta": 1,
+        "explicacion": "∫₀² 3 dx = 3x|₀² = 3(2) - 3(0) = 6"
+      }
+    ]
+  },
+  "por-partes": {
+    "titulo": "Integración por Partes",
+    "descripcion": "Técnica para integrar productos de funciones",
+    "contenido": {
+      "introduccion": "La integración por partes es una técnica basada en la regla del producto de derivadas.",
+      "formula": "∫u dv = uv - ∫v du",
+      "pasos": [
+        "Elegir u y dv",
+        "Calcular du y v",
+        "Aplicar la fórmula",
+        "Resolver la integral resultante"
+      ],
+      "ejemplo": {
+        "problema": "∫x·eˣ dx",
+        "solucion": "u = x, dv = eˣ dx → du = dx, v = eˣ → x·eˣ - ∫eˣ dx = x·eˣ - eˣ + C = eˣ(x-1) + C"
+      }
+    },
+    "ejercicios": [
+      {
+        "pregunta": "En ∫x·eˣ dx usando integración por partes, ¿cuál es la mejor elección de u?",
+        "opciones": ["u = eˣ", "u = x", "u = x·eˣ", "u = 1"],
+        "correcta": 1,
+        "explicacion": "Se elige u = x porque su derivada es más simple que la de eˣ"
+      },
+      {
+        "pregunta": "¿Cuál es ∫x cos(x) dx usando integración por partes?",
+        "opciones": [
+          "x sin(x) + cos(x) + C",
+          "x cos(x) - sin(x) + C",
+          "cos(x) - x sin(x) + C",
+          "sin(x) + cos(x) + C"
+        ],
+        "correcta": 0,
+        "explicacion": "u = x, dv = cos(x)dx; du = dx, v = sin(x). Resultado: x sin(x) + cos(x) + C"
+      }
+    ]
+  },
+  "sustitucion": {
+    "titulo": "Integración por Sustitución",
+    "descripcion": "Cambio de variable para simplificar integrales",
+    "contenido": {
+      "introduccion": "La sustitución (o cambio de variable) simplifica integrales complejas.",
+      "formula": "∫f(g(x))·g'(x)dx = ∫f(u)du, donde u = g(x)",
+      "pasos": [
+        "Identificar la sustitución u = g(x)",
+        "Calcular du = g'(x)dx",
+        "Reescribir la integral en términos de u",
+        "Integrar respecto a u",
+        "Sustituir de vuelta u = g(x)"
+      ]
+    },
+    "ejercicios": [
+      {
+        "pregunta": "Para ∫2x(x² + 1)³ dx, ¿cuál es la mejor sustitución?",
+        "opciones": ["u = x", "u = x² + 1", "u = 2x", "u = (x² + 1)³"],
+        "correcta": 1,
+        "explicacion": "Si u = x² + 1, entonces du = 2x dx, haciendo que la integral sea fácil de resolver"
+      },
+      {
+        "pregunta": "¿Cuál es ∫cos(2x) dx usando sustitución?",
+        "opciones": [
+          "2sin(2x) + C",
+          "sin(2x)/2 + C",
+          "sin(2x) + C",
+          "-sin(2x) + C"
+        ],
+        "correcta": 1,
+        "explicacion": "u = 2x, du = 2dx. ∫cos(u) du/2 = sin(u)/2 + C = sin(2x)/2 + C"
+      }
+    ]
+  },
+  "area-bajo-curva": {
+    "titulo": "Área bajo la Curva",
+    "descripcion": "Aplicación de integrales definidas",
+    "contenido": {
+      "introduccion": "El área bajo una curva entre dos puntos se calcula usando integrales definidas.",
+      "formula": "A = ∫ₐᵇ f(x)dx",
+      "casos_especiales": [
+        "Si f(x) ≥ 0: A = ∫ₐᵇ f(x)dx",
+        "Si f(x) ≤ 0: A = -∫ₐᵇ f(x)dx = ∫ₐᵇ |f(x)|dx",
+        "Si f(x) cambia de signo: dividir en intervalos donde no cambia de signo"
+      ]
+    },
+    "ejercicios": [
+      {
+        "pregunta": "¿Cuál es el área bajo la curva f(x) = x entre x = 0 y x = 3?",
+        "opciones": ["4.5 unidades cuadradas", "6 unidades cuadradas", "9 unidades cuadradas", "3 unidades cuadradas"],
+        "correcta": 0,
+        "explicacion": "∫₀³ x dx = [x²/2]₀³ = 9/2 = 4.5"
+      },
+      {
+        "pregunta": "Calcula el área bajo f(x) = 2x + 1 entre x = 1 y x = 2",
+        "opciones": ["3 unidades cuadradas", "4 unidades cuadradas", "5 unidades cuadradas", "6 unidades cuadradas"],
+        "correcta": 2,
+        "explicacion": "∫₁² (2x + 1)dx = [x² + x]₁² = (4 + 2) - (1 + 1) = 4"
+      },
+      {
+        "pregunta": "¿Cuál es el área bajo f(x) = x² desde x = 0 hasta x = 2?",
+        "opciones": ["4/3 unidades cuadradas", "8/3 unidades cuadradas", "16/3 unidades cuadradas", "2 unidades cuadradas"],
+        "correcta": 1,
+        "explicacion": "∫₀² x² dx = [x³/3]₀² = 8/3 unidades cuadradas"
+      }
+    ]
+  },
+  "volumen-solido": {
+    "titulo": "Volumen de un Sólido de Revolución",
+    "descripcion": "Cálculo de volúmenes usando integrales",
+    "contenido": {
+      "introduccion": "Cuando giramos un área alrededor de un eje, obtenemos un sólido de revolución.",
+      "formula_disco": "V = π ∫ₐᵇ [f(x)]² dx",
+      "formula_cilindro": "V = 2π ∫ₐᵇ x·f(x) dx",
+      "metodos": [
+        "Método de discos: V = π ∫ₐᵇ [R(x)]² dx",
+        "Método de capas cilíndricas: V = 2π ∫ₐᵇ x·f(x) dx"
+      ]
+    },
+    "ejercicios": [
+      {
+        "pregunta": "Encuentra el volumen del sólido de revolución generado al rotar f(x) = x alrededor del eje x entre x = 0 y x = 2 (usando método de discos)",
+        "opciones": ["4π/3 unidades cúbicas", "8π/3 unidades cúbicas", "16π/3 unidades cúbicas", "2π unidades cúbicas"],
+        "correcta": 1,
+        "explicacion": "V = π ∫₀² x² dx = π[x³/3]₀² = 8π/3"
+      },
+      {
+        "pregunta": "¿Cuál es el volumen cuando la función f(x) = 2 se rota alrededor del eje x de x = 0 a x = 3?",
+        "opciones": ["6π unidades cúbicas", "12π unidades cúbicas", "36π unidades cúbicas", "18π unidades cúbicas"],
+        "correcta": 2,
+        "explicacion": "V = π ∫₀³ 2² dx = π ∫₀³ 4 dx = 4π[x]₀³ = 12π"
+      },
+      {
+        "pregunta": "El sólido generado al rotar y = √x alrededor del eje x de x = 1 a x = 4 usando discos tiene volumen:",
+        "opciones": ["15π/2 unidades cúbicas", "9π/2 unidades cúbicas", "12π unidades cúbicas", "6π unidades cúbicas"],
+        "correcta": 0,
+        "explicacion": "V = π ∫₁⁴ (√x)² dx = π ∫₁⁴ x dx = π[x²/2]₁⁴ = π(8 - 0.5) = 15π/2"
+      }
+    ]
+  }
+}
